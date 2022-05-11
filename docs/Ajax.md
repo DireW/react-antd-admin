@@ -118,7 +118,7 @@
 * 说明：上传图片，返回上传后的url
 * 是否必需：可选，如果不使用图片上传可以忽略这个接口
 * 输入：文件上传请求，参数名为file
-* 输出：返回的data是一个string，是图片上传后的url，例如：`{"data":"http://jxy.me/about/avatar.jpg","message":"","success":true,"total":null}`。
+* 输出：返回的data是一个string，是图片上传后的url，例如：`{"data":"/about/avatar.jpg","message":"","success":true,"total":null}`。
 
 ### uploadFile-上传文件
 

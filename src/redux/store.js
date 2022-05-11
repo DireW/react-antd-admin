@@ -10,38 +10,38 @@ import Login from './Login.js';
 const logger = createLogger();
 let middleware;
 if (globalConfig.debug) {
-  middleware = applyMiddleware(logger);
+    middleware = applyMiddleware(logger);
 } else {
-  middleware = applyMiddleware();
+    middleware = applyMiddleware();
 }
 
 // 设置redux dev tools
 const composeEnhancers =
-  process.env.NODE_ENV !== 'production' &&
-  typeof window === 'object' &&
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-      // Specify here name, actionsBlacklist, actionsCreators and other options
-    }) : compose;
+    process.env.NODE_ENV !== 'production' &&
+    typeof window === 'object' &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+            // Specify here name, actionsBlacklist, actionsCreators and other options
+        }) : compose;
 const enhancer = composeEnhancers(
-  middleware,
-  // other store enhancers if any
+    middleware,
+    // other store enhancers if any
 );
 
 
 // 整体的初始状态
 // 就是把每个组件自己的初始状态组合起来, 注意key的名字和组件名一致
 const initState = {
-  Sidebar: Sidebar.initState,
-  Login: Login.initState,
+    Sidebar: Sidebar.initState,
+    Login: Login.initState,
 };
 
 
 // 定义reducer
 // 每个组件自己的reducer负责维护自己的状态, 注意key的名字和组件名一致
 const reducers = {
-  Sidebar: Sidebar.reducer,
-  Login: Login.reducer,
+    Sidebar: Sidebar.reducer,
+    Login: Login.reducer,
 };
 
 
